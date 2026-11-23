@@ -221,3 +221,17 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# --- SolarSense AI Lab ---
+# Data and trained models: big files, re-downloaded or re-trained
+data/
+ml/models/
+mlruns/
+
+# Website packages and build output
+node_modules/
+.next/
+
+# Mac system files
+.DS_Store
+.vscode/
