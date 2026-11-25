@@ -2,10 +2,13 @@
 
 from fastapi import FastAPI
 
+from app.api.routes import battery
+
 app = FastAPI(title="SolarSense AI Lab API", version="0.1.0")
+app.include_router(battery.router)
 
 
 @app.get("/health")
 def health() -> dict[str, str]:
-    """Return a simple status so we (and CI, and the server) can check the API is alive."""
+    """Return a simple status so CI and the server can check the API is alive."""
     return {"status": "ok"}
