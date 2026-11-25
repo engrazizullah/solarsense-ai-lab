@@ -1,0 +1,7 @@
+date,city,irradiance_kwh_m2,temp_c,panel_status
+2026-06-01,Rahim Yar Khan,6.8,41.2,clean
+2026-06-02,Rahim Yar Khan,7.1,42.0,clean
+2026-06-03,Rahim Yar Khan,,43.5,dusty
+2026-06-04,Lahore,6.2,,clean
+2026-06-05,Lahore,5.9,38.1,
+2026-06-05,Lahore,5.9,38.1,

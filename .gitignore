@@ -238,3 +238,6 @@ node_modules/
 
 # Our frontend code lives in frontend/lib (Python template ignores lib/)
 !frontend/lib/
+
+# Small hand-made test fixtures must be committed
+!backend/tests/data/
