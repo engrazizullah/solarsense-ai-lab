@@ -1,0 +1,31 @@
+"""Tests for the plain-Python CSV profiler."""
+
+from pathlib import Path
+
+from app.services.profiler import CsvProfiler
+
+SAMPLE = Path(__file__).parent / "data" / "sample_readings.csv"
+
+
+def test_profiler_counts_rows_and_duplicates() -> None:
+    report = CsvProfiler(SAMPLE).profile()
+
+    assert report.rows == 6
+    assert report.duplicate_rows == 1
+
+
+def test_profiler_missing_values_per_column() -> None:
+    report = CsvProfiler(SAMPLE).profile()
+    missing = {c.name: c.missing for c in report.columns}
+
+    assert missing["irradiance_kwh_m2"] == 1
+    assert missing["temp_c"] == 1
+    assert missing["panel_status"] == 2
+
+
+def test_profiler_detects_column_types() -> None:
+    report = CsvProfiler(SAMPLE).profile()
+    kinds = {c.name: c.kind for c in report.columns}
+
+    assert kinds["irradiance_kwh_m2"] == "numeric"
+    assert kinds["city"] == "text"
