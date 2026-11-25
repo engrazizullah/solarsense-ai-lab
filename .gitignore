@@ -235,3 +235,6 @@ node_modules/
 # Mac system files
 .DS_Store
 .vscode/
+
+# Our frontend code lives in frontend/lib (Python template ignores lib/)
+!frontend/lib/
