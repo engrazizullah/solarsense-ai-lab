@@ -59,3 +59,15 @@ def test_mixed_dates_and_text_is_text() -> None:
     col.add("yesterday")
 
     assert col.kind == "text"
+
+
+def test_missing_markers_count_as_missing() -> None:
+    from app.services.profiler import ColumnStats
+
+    col = ColumnStats("irradiance")
+    for value in ["6.8", "NA", "null", "nan", "7.1"]:
+        col.add(value)
+
+    assert col.missing == 3
+    assert col.kind == "numeric"
+    assert col.mean == 6.95

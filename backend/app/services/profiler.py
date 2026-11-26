@@ -9,6 +9,7 @@ from pathlib import Path
 from app.core.timing import timed
 
 UNIQUE_LIMIT = 1_000  # stop collecting distinct values after this many
+MISSING_MARKERS = {"", "na", "n/a", "#n/a", "<na>", "null", "none", "nan"}
 
 
 def read_rows(path: Path) -> Iterator[dict[str, str]]:
@@ -52,7 +53,7 @@ class ColumnStats:
     def add(self, raw: str | None) -> None:
         value = (raw or "").strip()
         self.count += 1
-        if value == "":
+        if value.lower() in MISSING_MARKERS:
             self.missing += 1
             return
         if len(self.unique) < UNIQUE_LIMIT:
