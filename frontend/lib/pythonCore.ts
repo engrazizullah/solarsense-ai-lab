@@ -2,7 +2,7 @@
 
 export interface ColumnSummary {
   name: string;
-  kind: "numeric" | "text" | "empty";
+  kind: "numeric" | "date" | "text" | "empty";
   missing: number;
   missing_pct: number;
   unique: string;

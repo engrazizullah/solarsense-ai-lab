@@ -3,11 +3,12 @@
 import csv
 from collections.abc import Iterator
 from dataclasses import dataclass, field
+from datetime import date
 from pathlib import Path
 
 from app.core.timing import timed
 
-UNIQUE_LIMIT = 1_000  # NEW: stop collecting distinct values after this many
+UNIQUE_LIMIT = 1_000  # stop collecting distinct values after this many
 
 
 def read_rows(path: Path) -> Iterator[dict[str, str]]:
@@ -24,6 +25,15 @@ def to_float(text: str) -> float | None:
         return None
 
 
+def is_iso_date(text: str) -> bool:  # NEW
+    """True if the text is an ISO date such as 2026-06-01."""
+    try:
+        date.fromisoformat(text)
+    except ValueError:
+        return False
+    return True
+
+
 @dataclass
 class ColumnStats:
     """Running statistics for one column, updated one value at a time."""
@@ -32,11 +42,12 @@ class ColumnStats:
     count: int = 0
     missing: int = 0
     numeric_count: int = 0
+    date_count: int = 0  # NEW
     total: float = 0.0
     minimum: float | None = None
     maximum: float | None = None
     unique: set[str] = field(default_factory=set)
-    unique_capped: bool = False  # NEW: True once UNIQUE_LIMIT is reached
+    unique_capped: bool = False
 
     def add(self, raw: str | None) -> None:
         value = (raw or "").strip()
@@ -44,12 +55,14 @@ class ColumnStats:
         if value == "":
             self.missing += 1
             return
-        if len(self.unique) < UNIQUE_LIMIT:  # NEW
+        if len(self.unique) < UNIQUE_LIMIT:
             self.unique.add(value)
         elif value not in self.unique:
             self.unique_capped = True
         number = to_float(value)
         if number is None:
+            if is_iso_date(value):  # NEW: only checked when it is not a number
+                self.date_count += 1
             return
         self.numeric_count += 1
         self.total += number
@@ -61,7 +74,11 @@ class ColumnStats:
         filled = self.count - self.missing
         if filled == 0:
             return "empty"
-        return "numeric" if self.numeric_count == filled else "text"
+        if self.numeric_count == filled:
+            return "numeric"
+        if self.date_count == filled:  # NEW
+            return "date"
+        return "text"
 
     @property
     def mean(self) -> float | None:
@@ -70,7 +87,7 @@ class ColumnStats:
         return round(self.total / self.numeric_count, 3)
 
     @property
-    def unique_label(self) -> str:  # NEW: "42" or "1,000+"
+    def unique_label(self) -> str:
         count = f"{len(self.unique):,}"
         return f"{count}+" if self.unique_capped else count
 
@@ -91,13 +108,13 @@ class CsvProfiler:
     @timed
     def profile(self) -> ProfileReport:
         columns: dict[str, ColumnStats] = {}
-        seen: set[int] = set()  # NEW: row hashes, not whole rows
+        seen: set[int] = set()  # row hashes, not whole rows
         rows = 0
         duplicates = 0
 
         for row in read_rows(self.path):
             rows += 1
-            key = hash(tuple(str(value) for value in row.values()))  # NEW
+            key = hash(tuple(str(value) for value in row.values()))
             if key in seen:
                 duplicates += 1
             else:
