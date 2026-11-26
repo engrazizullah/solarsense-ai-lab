@@ -26,7 +26,12 @@ def make_csv(path: Path, rows: int) -> None:
         for i in range(rows):
             irradiance = "" if rng.random() < 0.02 else f"{rng.uniform(3, 8):.2f}"
             writer.writerow(
-                [f"day-{i}", rng.choice(CITIES), irradiance, f"{rng.uniform(5, 48):.1f}"]
+                [
+                    f"day-{i}",
+                    rng.choice(CITIES),
+                    irradiance,
+                    f"{rng.uniform(5, 48):.1f}",
+                ]
             )
 
 
@@ -54,7 +59,9 @@ def main() -> None:
             ("Plain Python", lambda: CsvProfiler(path).profile()),
             ("Pandas", lambda: profile_with_pandas(path)),
         ]:
-            print(f"{name:13} {seconds(run):6.2f} s   peak memory {peak_mb(run):7.1f} MB")
+            print(
+                f"{name:13} {seconds(run):6.2f} s   peak memory {peak_mb(run):7.1f} MB"
+            )
 
 
 if __name__ == "__main__":

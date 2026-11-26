@@ -7,6 +7,8 @@ from pathlib import Path
 
 from app.core.timing import timed
 
+UNIQUE_LIMIT = 1_000  # NEW: stop collecting distinct values after this many
+
 
 def read_rows(path: Path) -> Iterator[dict[str, str]]:
     """Yield one CSV row at a time as {column: raw text}, never the whole file."""
@@ -34,6 +36,7 @@ class ColumnStats:
     minimum: float | None = None
     maximum: float | None = None
     unique: set[str] = field(default_factory=set)
+    unique_capped: bool = False  # NEW: True once UNIQUE_LIMIT is reached
 
     def add(self, raw: str | None) -> None:
         value = (raw or "").strip()
@@ -41,7 +44,10 @@ class ColumnStats:
         if value == "":
             self.missing += 1
             return
-        self.unique.add(value)
+        if len(self.unique) < UNIQUE_LIMIT:  # NEW
+            self.unique.add(value)
+        elif value not in self.unique:
+            self.unique_capped = True
         number = to_float(value)
         if number is None:
             return
@@ -63,6 +69,11 @@ class ColumnStats:
             return None
         return round(self.total / self.numeric_count, 3)
 
+    @property
+    def unique_label(self) -> str:  # NEW: "42" or "1,000+"
+        count = f"{len(self.unique):,}"
+        return f"{count}+" if self.unique_capped else count
+
 
 @dataclass
 class ProfileReport:
@@ -80,13 +91,13 @@ class CsvProfiler:
     @timed
     def profile(self) -> ProfileReport:
         columns: dict[str, ColumnStats] = {}
-        seen: set[tuple[str, ...]] = set()
+        seen: set[int] = set()  # NEW: row hashes, not whole rows
         rows = 0
         duplicates = 0
 
         for row in read_rows(self.path):
             rows += 1
-            key = tuple(str(value) for value in row.values())
+            key = hash(tuple(str(value) for value in row.values()))  # NEW
             if key in seen:
                 duplicates += 1
             else:

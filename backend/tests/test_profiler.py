@@ -29,3 +29,15 @@ def test_profiler_detects_column_types() -> None:
 
     assert kinds["irradiance_kwh_m2"] == "numeric"
     assert kinds["city"] == "text"
+
+
+def test_unique_values_are_capped() -> None:
+    from app.services.profiler import UNIQUE_LIMIT, ColumnStats
+
+    col = ColumnStats("id")
+    for i in range(UNIQUE_LIMIT + 500):
+        col.add(str(i))
+
+    assert len(col.unique) == UNIQUE_LIMIT
+    assert col.unique_capped is True
+    assert col.unique_label == "1,000+"
