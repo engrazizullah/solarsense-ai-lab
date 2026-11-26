@@ -41,3 +41,21 @@ def test_unique_values_are_capped() -> None:
     assert len(col.unique) == UNIQUE_LIMIT
     assert col.unique_capped is True
     assert col.unique_label == "1,000+"
+
+
+def test_profiler_detects_date_column() -> None:
+    report = CsvProfiler(SAMPLE).profile()
+    kinds = {c.name: c.kind for c in report.columns}
+
+    assert kinds["date"] == "date"
+    assert kinds["irradiance_kwh_m2"] == "numeric"
+
+
+def test_mixed_dates_and_text_is_text() -> None:
+    from app.services.profiler import ColumnStats
+
+    col = ColumnStats("when")
+    col.add("2026-06-01")
+    col.add("yesterday")
+
+    assert col.kind == "text"
