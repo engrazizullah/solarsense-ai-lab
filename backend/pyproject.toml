@@ -10,6 +10,7 @@ requires-python = ">=3.12"
 dependencies = [
     "alembic>=1.20.1",
     "fastapi>=0.165.0",
+    "httpx2>=2.16.2",
     "pandas>=3.1.1",
     "psycopg[binary]>=3.3.9",
     "pydantic-settings>=2.16.3",
@@ -23,7 +24,6 @@ package = false
 
 [dependency-groups]
 dev = [
-    "httpx2>=2.16.2",
     "pytest>=9.2.0",
     "ruff>=0.17.6",
 ]
