@@ -12,6 +12,7 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=ROOT_ENV, extra="ignore")
 
     database_url: str
+    enable_scheduler: bool = False
 
 
 @lru_cache
