@@ -4,6 +4,7 @@ import pandas as pd
 import pytest
 from fastapi.testclient import TestClient
 
+from app.db.session import get_session
 from app.main import app
 from app.ml.forecast import build_features, forecast_next
 
@@ -68,5 +69,10 @@ def test_metrics_endpoint():
 
 
 def test_next_unknown_city_is_404():
-    response = client.get("/api/forecast/next", params={"city": "Paris"})
+    # No database in CI: swap the real session for a dummy (dependency injection).
+    app.dependency_overrides[get_session] = lambda: None
+    try:
+        response = client.get("/api/forecast/next", params={"city": "Paris"})
+    finally:
+        app.dependency_overrides.pop(get_session, None)  # don't leak into other tests
     assert response.status_code == 404
