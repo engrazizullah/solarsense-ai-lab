@@ -5,7 +5,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
-from app.api.routes import battery, python_core
+from app.api.routes import battery, python_core, weather
 from app.core.config import get_settings
 from app.core.logging import setup_logging
 
@@ -27,6 +27,7 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
 app = FastAPI(title="SolarSense AI Lab API", version="0.1.0", lifespan=lifespan)
 app.include_router(battery.router)
 app.include_router(python_core.router)
+app.include_router(weather.router)
 
 
 @app.get("/health")
