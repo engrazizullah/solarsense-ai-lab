@@ -1,0 +1,1863 @@
+{
+  "trained_at": "2026-11-28T17:18:26+00:00",
+  "train_period": [
+    "2023-12-01",
+    "2025-11-27"
+  ],
+  "test_period": [
+    "2025-11-28",
+    "2026-11-27"
+  ],
+  "n_train": 3640,
+  "n_test": 1825,
+  "features": [
+    "lag1",
+    "lag2",
+    "roll7",
+    "tmax_lag1",
+    "rain_lag1",
+    "doy_sin",
+    "doy_cos",
+    "city_rahim_yar_khan",
+    "city_lahore",
+    "city_karachi",
+    "city_multan",
+    "city_islamabad"
+  ],
+  "results": [
+    {
+      "name": "Baseline: tomorrow = today",
+      "mae": 0.386,
+      "rmse": 0.671,
+      "r2": 0.746,
+      "skill_pct": 0.0
+    },
+    {
+      "name": "Linear regression",
+      "mae": 0.356,
+      "rmse": 0.569,
+      "r2": 0.817,
+      "skill_pct": 7.8
+    },
+    {
+      "name": "Gradient boosting",
+      "mae": 0.421,
+      "rmse": 0.641,
+      "r2": 0.768,
+      "skill_pct": -9.0
+    }
+  ],
+  "best_model": "Linear regression",
+  "samples": {
+    "Islamabad": [
+      {
+        "day": "2026-09-29",
+        "actual": 5.08,
+        "predicted": 4.0,
+        "baseline": 3.4
+      },
+      {
+        "day": "2026-09-30",
+        "actual": 5.11,
+        "predicted": 4.69,
+        "baseline": 5.08
+      },
+      {
+        "day": "2026-10-01",
+        "actual": 4.97,
+        "predicted": 4.66,
+        "baseline": 5.11
+      },
+      {
+        "day": "2026-10-02",
+        "actual": 4.92,
+        "predicted": 4.62,
+        "baseline": 4.97
+      },
+      {
+        "day": "2026-10-03",
+        "actual": 4.96,
+        "predicted": 4.61,
+        "baseline": 4.92
+      },
+      {
+        "day": "2026-10-04",
+        "actual": 4.79,
+        "predicted": 4.61,
+        "baseline": 4.96
+      },
+      {
+        "day": "2026-10-05",
+        "actual": 4.51,
+        "predicted": 4.53,
+        "baseline": 4.79
+      },
+      {
+        "day": "2026-10-06",
+        "actual": 3.05,
+        "predicted": 4.47,
+        "baseline": 4.51
+      },
+      {
+        "day": "2026-10-07",
+        "actual": 4.38,
+        "predicted": 3.79,
+        "baseline": 3.05
+      },
+      {
+        "day": "2026-10-08",
+        "actual": 4.38,
+        "predicted": 4.38,
+        "baseline": 4.38
+      },
+      {
+        "day": "2026-10-09",
+        "actual": 4.17,
+        "predicted": 4.23,
+        "baseline": 4.38
+      },
+      {
+        "day": "2026-10-10",
+        "actual": 3.62,
+        "predicted": 4.11,
+        "baseline": 4.17
+      },
+      {
+        "day": "2026-10-11",
+        "actual": 3.78,
+        "predicted": 3.82,
+        "baseline": 3.62
+      },
+      {
+        "day": "2026-10-12",
+        "actual": 4.22,
+        "predicted": 3.87,
+        "baseline": 3.78
+      },
+      {
+        "day": "2026-10-13",
+        "actual": 3.59,
+        "predicted": 3.98,
+        "baseline": 4.22
+      },
+      {
+        "day": "2026-10-14",
+        "actual": 3.76,
+        "predicted": 3.73,
+        "baseline": 3.59
+      },
+      {
+        "day": "2026-10-15",
+        "actual": 4.12,
+        "predicted": 3.81,
+        "baseline": 3.76
+      },
+      {
+        "day": "2026-10-16",
+        "actual": 4.46,
+        "predicted": 3.91,
+        "baseline": 4.12
+      },
+      {
+        "day": "2026-10-17",
+        "actual": 4.33,
+        "predicted": 4.05,
+        "baseline": 4.46
+      },
+      {
+        "day": "2026-10-18",
+        "actual": 4.3,
+        "predicted": 4.02,
+        "baseline": 4.33
+      },
+      {
+        "day": "2026-10-19",
+        "actual": 4.33,
+        "predicted": 4.04,
+        "baseline": 4.3
+      },
+      {
+        "day": "2026-10-20",
+        "actual": 4.29,
+        "predicted": 4.06,
+        "baseline": 4.33
+      },
+      {
+        "day": "2026-10-21",
+        "actual": 4.27,
+        "predicted": 4.08,
+        "baseline": 4.29
+      },
+      {
+        "day": "2026-10-22",
+        "actual": 4.27,
+        "predicted": 4.1,
+        "baseline": 4.27
+      },
+      {
+        "day": "2026-10-23",
+        "actual": 3.85,
+        "predicted": 4.1,
+        "baseline": 4.27
+      },
+      {
+        "day": "2026-10-24",
+        "actual": 3.27,
+        "predicted": 3.89,
+        "baseline": 3.85
+      },
+      {
+        "day": "2026-10-25",
+        "actual": 4.08,
+        "predicted": 3.59,
+        "baseline": 3.27
+      },
+      {
+        "day": "2026-10-26",
+        "actual": 4.11,
+        "predicted": 3.94,
+        "baseline": 4.08
+      },
+      {
+        "day": "2026-10-27",
+        "actual": 4.08,
+        "predicted": 3.91,
+        "baseline": 4.11
+      },
+      {
+        "day": "2026-10-28",
+        "actual": 4.11,
+        "predicted": 3.88,
+        "baseline": 4.08
+      },
+      {
+        "day": "2026-10-29",
+        "actual": 4.08,
+        "predicted": 3.88,
+        "baseline": 4.11
+      },
+      {
+        "day": "2026-10-30",
+        "actual": 3.84,
+        "predicted": 3.85,
+        "baseline": 4.08
+      },
+      {
+        "day": "2026-10-31",
+        "actual": 3.92,
+        "predicted": 3.75,
+        "baseline": 3.84
+      },
+      {
+        "day": "2026-11-01",
+        "actual": 3.76,
+        "predicted": 3.83,
+        "baseline": 3.92
+      },
+      {
+        "day": "2026-11-02",
+        "actual": 3.73,
+        "predicted": 3.74,
+        "baseline": 3.76
+      },
+      {
+        "day": "2026-11-03",
+        "actual": 3.64,
+        "predicted": 3.71,
+        "baseline": 3.73
+      },
+      {
+        "day": "2026-11-04",
+        "actual": 3.75,
+        "predicted": 3.64,
+        "baseline": 3.64
+      },
+      {
+        "day": "2026-11-05",
+        "actual": 3.08,
+        "predicted": 3.67,
+        "baseline": 3.75
+      },
+      {
+        "day": "2026-11-06",
+        "actual": 3.69,
+        "predicted": 3.32,
+        "baseline": 3.08
+      },
+      {
+        "day": "2026-11-07",
+        "actual": 3.73,
+        "predicted": 3.6,
+        "baseline": 3.69
+      },
+      {
+        "day": "2026-11-08",
+        "actual": 3.65,
+        "predicted": 3.57,
+        "baseline": 3.73
+      },
+      {
+        "day": "2026-11-09",
+        "actual": 3.12,
+        "predicted": 3.53,
+        "baseline": 3.65
+      },
+      {
+        "day": "2026-11-10",
+        "actual": 3.45,
+        "predicted": 3.27,
+        "baseline": 3.12
+      },
+      {
+        "day": "2026-11-11",
+        "actual": 3.12,
+        "predicted": 3.42,
+        "baseline": 3.45
+      },
+      {
+        "day": "2026-11-12",
+        "actual": 1.66,
+        "predicted": 3.29,
+        "baseline": 3.12
+      },
+      {
+        "day": "2026-11-13",
+        "actual": 2.5,
+        "predicted": 2.66,
+        "baseline": 1.66
+      },
+      {
+        "day": "2026-11-14",
+        "actual": 3.4,
+        "predicted": 3.24,
+        "baseline": 2.5
+      },
+      {
+        "day": "2026-11-15",
+        "actual": 3.41,
+        "predicted": 3.21,
+        "baseline": 3.4
+      },
+      {
+        "day": "2026-11-16",
+        "actual": 3.51,
+        "predicted": 3.17,
+        "baseline": 3.41
+      },
+      {
+        "day": "2026-11-17",
+        "actual": 3.49,
+        "predicted": 3.23,
+        "baseline": 3.51
+      },
+      {
+        "day": "2026-11-18",
+        "actual": 3.41,
+        "predicted": 3.22,
+        "baseline": 3.49
+      },
+      {
+        "day": "2026-11-19",
+        "actual": 3.43,
+        "predicted": 3.21,
+        "baseline": 3.41
+      },
+      {
+        "day": "2026-11-20",
+        "actual": 3.38,
+        "predicted": 3.32,
+        "baseline": 3.43
+      },
+      {
+        "day": "2026-11-21",
+        "actual": 2.73,
+        "predicted": 3.35,
+        "baseline": 3.38
+      },
+      {
+        "day": "2026-11-22",
+        "actual": 3.29,
+        "predicted": 3.03,
+        "baseline": 2.73
+      },
+      {
+        "day": "2026-11-23",
+        "actual": 3.36,
+        "predicted": 3.29,
+        "baseline": 3.29
+      },
+      {
+        "day": "2026-11-24",
+        "actual": 3.21,
+        "predicted": 3.29,
+        "baseline": 3.36
+      },
+      {
+        "day": "2026-11-25",
+        "actual": 3.26,
+        "predicted": 3.21,
+        "baseline": 3.21
+      },
+      {
+        "day": "2026-11-26",
+        "actual": 3.21,
+        "predicted": 3.23,
+        "baseline": 3.26
+      },
+      {
+        "day": "2026-11-27",
+        "actual": 3.12,
+        "predicted": 3.19,
+        "baseline": 3.21
+      }
+    ],
+    "Karachi": [
+      {
+        "day": "2026-09-29",
+        "actual": 5.95,
+        "predicted": 5.42,
+        "baseline": 5.7
+      },
+      {
+        "day": "2026-09-30",
+        "actual": 5.63,
+        "predicted": 5.52,
+        "baseline": 5.95
+      },
+      {
+        "day": "2026-10-01",
+        "actual": 5.74,
+        "predicted": 5.34,
+        "baseline": 5.63
+      },
+      {
+        "day": "2026-10-02",
+        "actual": 5.8,
+        "predicted": 5.39,
+        "baseline": 5.74
+      },
+      {
+        "day": "2026-10-03",
+        "actual": 5.74,
+        "predicted": 5.43,
+        "baseline": 5.8
+      },
+      {
+        "day": "2026-10-04",
+        "actual": 5.73,
+        "predicted": 5.47,
+        "baseline": 5.74
+      },
+      {
+        "day": "2026-10-05",
+        "actual": 4.04,
+        "predicted": 5.48,
+        "baseline": 5.73
+      },
+      {
+        "day": "2026-10-06",
+        "actual": 4.8,
+        "predicted": 4.66,
+        "baseline": 4.04
+      },
+      {
+        "day": "2026-10-07",
+        "actual": 4.87,
+        "predicted": 4.97,
+        "baseline": 4.8
+      },
+      {
+        "day": "2026-10-08",
+        "actual": 5.53,
+        "predicted": 4.93,
+        "baseline": 4.87
+      },
+      {
+        "day": "2026-10-09",
+        "actual": 4.21,
+        "predicted": 5.19,
+        "baseline": 5.53
+      },
+      {
+        "day": "2026-10-10",
+        "actual": 5.01,
+        "predicted": 4.5,
+        "baseline": 4.21
+      },
+      {
+        "day": "2026-10-11",
+        "actual": 5.26,
+        "predicted": 4.85,
+        "baseline": 5.01
+      },
+      {
+        "day": "2026-10-12",
+        "actual": 5.35,
+        "predicted": 4.89,
+        "baseline": 5.26
+      },
+      {
+        "day": "2026-10-13",
+        "actual": 5.4,
+        "predicted": 5.0,
+        "baseline": 5.35
+      },
+      {
+        "day": "2026-10-14",
+        "actual": 5.45,
+        "predicted": 5.05,
+        "baseline": 5.4
+      },
+      {
+        "day": "2026-10-15",
+        "actual": 5.42,
+        "predicted": 5.09,
+        "baseline": 5.45
+      },
+      {
+        "day": "2026-10-16",
+        "actual": 5.27,
+        "predicted": 5.07,
+        "baseline": 5.42
+      },
+      {
+        "day": "2026-10-17",
+        "actual": 5.26,
+        "predicted": 5.07,
+        "baseline": 5.27
+      },
+      {
+        "day": "2026-10-18",
+        "actual": 5.33,
+        "predicted": 5.08,
+        "baseline": 5.26
+      },
+      {
+        "day": "2026-10-19",
+        "actual": 5.3,
+        "predicted": 5.11,
+        "baseline": 5.33
+      },
+      {
+        "day": "2026-10-20",
+        "actual": 5.27,
+        "predicted": 5.09,
+        "baseline": 5.3
+      },
+      {
+        "day": "2026-10-21",
+        "actual": 5.14,
+        "predicted": 5.07,
+        "baseline": 5.27
+      },
+      {
+        "day": "2026-10-22",
+        "actual": 5.33,
+        "predicted": 5.0,
+        "baseline": 5.14
+      },
+      {
+        "day": "2026-10-23",
+        "actual": 5.21,
+        "predicted": 5.07,
+        "baseline": 5.33
+      },
+      {
+        "day": "2026-10-24",
+        "actual": 5.39,
+        "predicted": 5.01,
+        "baseline": 5.21
+      },
+      {
+        "day": "2026-10-25",
+        "actual": 5.28,
+        "predicted": 5.1,
+        "baseline": 5.39
+      },
+      {
+        "day": "2026-10-26",
+        "actual": 5.22,
+        "predicted": 5.04,
+        "baseline": 5.28
+      },
+      {
+        "day": "2026-10-27",
+        "actual": 5.21,
+        "predicted": 5.01,
+        "baseline": 5.22
+      },
+      {
+        "day": "2026-10-28",
+        "actual": 5.09,
+        "predicted": 5.0,
+        "baseline": 5.21
+      },
+      {
+        "day": "2026-10-29",
+        "actual": 5.11,
+        "predicted": 4.94,
+        "baseline": 5.09
+      },
+      {
+        "day": "2026-10-30",
+        "actual": 5.14,
+        "predicted": 4.94,
+        "baseline": 5.11
+      },
+      {
+        "day": "2026-10-31",
+        "actual": 5.05,
+        "predicted": 4.95,
+        "baseline": 5.14
+      },
+      {
+        "day": "2026-11-01",
+        "actual": 5.01,
+        "predicted": 4.89,
+        "baseline": 5.05
+      },
+      {
+        "day": "2026-11-02",
+        "actual": 4.7,
+        "predicted": 4.86,
+        "baseline": 5.01
+      },
+      {
+        "day": "2026-11-03",
+        "actual": 4.95,
+        "predicted": 4.69,
+        "baseline": 4.7
+      },
+      {
+        "day": "2026-11-04",
+        "actual": 4.73,
+        "predicted": 4.8,
+        "baseline": 4.95
+      },
+      {
+        "day": "2026-11-05",
+        "actual": 4.89,
+        "predicted": 4.67,
+        "baseline": 4.73
+      },
+      {
+        "day": "2026-11-06",
+        "actual": 4.89,
+        "predicted": 4.73,
+        "baseline": 4.89
+      },
+      {
+        "day": "2026-11-07",
+        "actual": 4.9,
+        "predicted": 4.71,
+        "baseline": 4.89
+      },
+      {
+        "day": "2026-11-08",
+        "actual": 4.84,
+        "predicted": 4.7,
+        "baseline": 4.9
+      },
+      {
+        "day": "2026-11-09",
+        "actual": 4.73,
+        "predicted": 4.67,
+        "baseline": 4.84
+      },
+      {
+        "day": "2026-11-10",
+        "actual": 4.71,
+        "predicted": 4.62,
+        "baseline": 4.73
+      },
+      {
+        "day": "2026-11-11",
+        "actual": 4.79,
+        "predicted": 4.6,
+        "baseline": 4.71
+      },
+      {
+        "day": "2026-11-12",
+        "actual": 4.51,
+        "predicted": 4.64,
+        "baseline": 4.79
+      },
+      {
+        "day": "2026-11-13",
+        "actual": 4.08,
+        "predicted": 4.5,
+        "baseline": 4.51
+      },
+      {
+        "day": "2026-11-14",
+        "actual": 3.92,
+        "predicted": 4.27,
+        "baseline": 4.08
+      },
+      {
+        "day": "2026-11-15",
+        "actual": 4.51,
+        "predicted": 4.19,
+        "baseline": 3.92
+      },
+      {
+        "day": "2026-11-16",
+        "actual": 4.62,
+        "predicted": 4.4,
+        "baseline": 4.51
+      },
+      {
+        "day": "2026-11-17",
+        "actual": 4.58,
+        "predicted": 4.42,
+        "baseline": 4.62
+      },
+      {
+        "day": "2026-11-18",
+        "actual": 4.58,
+        "predicted": 4.39,
+        "baseline": 4.58
+      },
+      {
+        "day": "2026-11-19",
+        "actual": 4.65,
+        "predicted": 4.38,
+        "baseline": 4.58
+      },
+      {
+        "day": "2026-11-20",
+        "actual": 4.64,
+        "predicted": 4.42,
+        "baseline": 4.65
+      },
+      {
+        "day": "2026-11-21",
+        "actual": 4.61,
+        "predicted": 4.44,
+        "baseline": 4.64
+      },
+      {
+        "day": "2026-11-22",
+        "actual": 4.57,
+        "predicted": 4.47,
+        "baseline": 4.61
+      },
+      {
+        "day": "2026-11-23",
+        "actual": 4.58,
+        "predicted": 4.46,
+        "baseline": 4.57
+      },
+      {
+        "day": "2026-11-24",
+        "actual": 4.55,
+        "predicted": 4.46,
+        "baseline": 4.58
+      },
+      {
+        "day": "2026-11-25",
+        "actual": 4.36,
+        "predicted": 4.45,
+        "baseline": 4.55
+      },
+      {
+        "day": "2026-11-26",
+        "actual": 4.33,
+        "predicted": 4.35,
+        "baseline": 4.36
+      },
+      {
+        "day": "2026-11-27",
+        "actual": 4.21,
+        "predicted": 4.33,
+        "baseline": 4.33
+      }
+    ],
+    "Lahore": [
+      {
+        "day": "2026-09-29",
+        "actual": 5.03,
+        "predicted": 4.23,
+        "baseline": 4.04
+      },
+      {
+        "day": "2026-09-30",
+        "actual": 5.08,
+        "predicted": 4.69,
+        "baseline": 5.03
+      },
+      {
+        "day": "2026-10-01",
+        "actual": 4.91,
+        "predicted": 4.67,
+        "baseline": 5.08
+      },
+      {
+        "day": "2026-10-02",
+        "actual": 4.83,
+        "predicted": 4.61,
+        "baseline": 4.91
+      },
+      {
+        "day": "2026-10-03",
+        "actual": 4.85,
+        "predicted": 4.6,
+        "baseline": 4.83
+      },
+      {
+        "day": "2026-10-04",
+        "actual": 4.81,
+        "predicted": 4.59,
+        "baseline": 4.85
+      },
+      {
+        "day": "2026-10-05",
+        "actual": 4.78,
+        "predicted": 4.56,
+        "baseline": 4.81
+      },
+      {
+        "day": "2026-10-06",
+        "actual": 4.47,
+        "predicted": 4.59,
+        "baseline": 4.78
+      },
+      {
+        "day": "2026-10-07",
+        "actual": 4.34,
+        "predicted": 4.43,
+        "baseline": 4.47
+      },
+      {
+        "day": "2026-10-08",
+        "actual": 4.37,
+        "predicted": 4.42,
+        "baseline": 4.34
+      },
+      {
+        "day": "2026-10-09",
+        "actual": 4.23,
+        "predicted": 4.33,
+        "baseline": 4.37
+      },
+      {
+        "day": "2026-10-10",
+        "actual": 3.86,
+        "predicted": 4.23,
+        "baseline": 4.23
+      },
+      {
+        "day": "2026-10-11",
+        "actual": 2.82,
+        "predicted": 4.0,
+        "baseline": 3.86
+      },
+      {
+        "day": "2026-10-12",
+        "actual": 4.46,
+        "predicted": 3.59,
+        "baseline": 2.82
+      },
+      {
+        "day": "2026-10-13",
+        "actual": 4.36,
+        "predicted": 4.18,
+        "baseline": 4.46
+      },
+      {
+        "day": "2026-10-14",
+        "actual": 4.02,
+        "predicted": 4.06,
+        "baseline": 4.36
+      },
+      {
+        "day": "2026-10-15",
+        "actual": 3.81,
+        "predicted": 3.91,
+        "baseline": 4.02
+      },
+      {
+        "day": "2026-10-16",
+        "actual": 4.05,
+        "predicted": 3.82,
+        "baseline": 3.81
+      },
+      {
+        "day": "2026-10-17",
+        "actual": 4.26,
+        "predicted": 3.88,
+        "baseline": 4.05
+      },
+      {
+        "day": "2026-10-18",
+        "actual": 4.38,
+        "predicted": 3.98,
+        "baseline": 4.26
+      },
+      {
+        "day": "2026-10-19",
+        "actual": 4.31,
+        "predicted": 4.12,
+        "baseline": 4.38
+      },
+      {
+        "day": "2026-10-20",
+        "actual": 4.11,
+        "predicted": 4.07,
+        "baseline": 4.31
+      },
+      {
+        "day": "2026-10-21",
+        "actual": 4.07,
+        "predicted": 3.97,
+        "baseline": 4.11
+      },
+      {
+        "day": "2026-10-22",
+        "actual": 4.12,
+        "predicted": 3.96,
+        "baseline": 4.07
+      },
+      {
+        "day": "2026-10-23",
+        "actual": 3.48,
+        "predicted": 4.0,
+        "baseline": 4.12
+      },
+      {
+        "day": "2026-10-24",
+        "actual": 3.64,
+        "predicted": 3.71,
+        "baseline": 3.48
+      },
+      {
+        "day": "2026-10-25",
+        "actual": 4.12,
+        "predicted": 3.75,
+        "baseline": 3.64
+      },
+      {
+        "day": "2026-10-26",
+        "actual": 4.14,
+        "predicted": 3.92,
+        "baseline": 4.12
+      },
+      {
+        "day": "2026-10-27",
+        "actual": 4.09,
+        "predicted": 3.9,
+        "baseline": 4.14
+      },
+      {
+        "day": "2026-10-28",
+        "actual": 4.13,
+        "predicted": 3.87,
+        "baseline": 4.09
+      },
+      {
+        "day": "2026-10-29",
+        "actual": 4.11,
+        "predicted": 3.9,
+        "baseline": 4.13
+      },
+      {
+        "day": "2026-10-30",
+        "actual": 3.72,
+        "predicted": 3.88,
+        "baseline": 4.11
+      },
+      {
+        "day": "2026-10-31",
+        "actual": 3.91,
+        "predicted": 3.73,
+        "baseline": 3.72
+      },
+      {
+        "day": "2026-11-01",
+        "actual": 3.82,
+        "predicted": 3.84,
+        "baseline": 3.91
+      },
+      {
+        "day": "2026-11-02",
+        "actual": 3.76,
+        "predicted": 3.77,
+        "baseline": 3.82
+      },
+      {
+        "day": "2026-11-03",
+        "actual": 3.76,
+        "predicted": 3.73,
+        "baseline": 3.76
+      },
+      {
+        "day": "2026-11-04",
+        "actual": 3.75,
+        "predicted": 3.71,
+        "baseline": 3.76
+      },
+      {
+        "day": "2026-11-05",
+        "actual": 3.66,
+        "predicted": 3.68,
+        "baseline": 3.75
+      },
+      {
+        "day": "2026-11-06",
+        "actual": 3.71,
+        "predicted": 3.61,
+        "baseline": 3.66
+      },
+      {
+        "day": "2026-11-07",
+        "actual": 3.73,
+        "predicted": 3.64,
+        "baseline": 3.71
+      },
+      {
+        "day": "2026-11-08",
+        "actual": 3.66,
+        "predicted": 3.63,
+        "baseline": 3.73
+      },
+      {
+        "day": "2026-11-09",
+        "actual": 3.37,
+        "predicted": 3.59,
+        "baseline": 3.66
+      },
+      {
+        "day": "2026-11-10",
+        "actual": 3.49,
+        "predicted": 3.44,
+        "baseline": 3.37
+      },
+      {
+        "day": "2026-11-11",
+        "actual": 3.39,
+        "predicted": 3.49,
+        "baseline": 3.49
+      },
+      {
+        "day": "2026-11-12",
+        "actual": 2.72,
+        "predicted": 3.42,
+        "baseline": 3.39
+      },
+      {
+        "day": "2026-11-13",
+        "actual": 2.83,
+        "predicted": 3.08,
+        "baseline": 2.72
+      },
+      {
+        "day": "2026-11-14",
+        "actual": 3.29,
+        "predicted": 3.1,
+        "baseline": 2.83
+      },
+      {
+        "day": "2026-11-15",
+        "actual": 3.34,
+        "predicted": 3.27,
+        "baseline": 3.29
+      },
+      {
+        "day": "2026-11-16",
+        "actual": 3.49,
+        "predicted": 3.25,
+        "baseline": 3.34
+      },
+      {
+        "day": "2026-11-17",
+        "actual": 3.51,
+        "predicted": 3.32,
+        "baseline": 3.49
+      },
+      {
+        "day": "2026-11-18",
+        "actual": 3.44,
+        "predicted": 3.33,
+        "baseline": 3.51
+      },
+      {
+        "day": "2026-11-19",
+        "actual": 3.46,
+        "predicted": 3.3,
+        "baseline": 3.44
+      },
+      {
+        "day": "2026-11-20",
+        "actual": 3.43,
+        "predicted": 3.35,
+        "baseline": 3.46
+      },
+      {
+        "day": "2026-11-21",
+        "actual": 2.81,
+        "predicted": 3.37,
+        "baseline": 3.43
+      },
+      {
+        "day": "2026-11-22",
+        "actual": 3.28,
+        "predicted": 3.08,
+        "baseline": 2.81
+      },
+      {
+        "day": "2026-11-23",
+        "actual": 3.35,
+        "predicted": 3.3,
+        "baseline": 3.28
+      },
+      {
+        "day": "2026-11-24",
+        "actual": 3.34,
+        "predicted": 3.31,
+        "baseline": 3.35
+      },
+      {
+        "day": "2026-11-25",
+        "actual": 3.29,
+        "predicted": 3.29,
+        "baseline": 3.34
+      },
+      {
+        "day": "2026-11-26",
+        "actual": 3.24,
+        "predicted": 3.26,
+        "baseline": 3.29
+      },
+      {
+        "day": "2026-11-27",
+        "actual": 3.19,
+        "predicted": 3.23,
+        "baseline": 3.24
+      }
+    ],
+    "Multan": [
+      {
+        "day": "2026-09-29",
+        "actual": 4.96,
+        "predicted": 4.89,
+        "baseline": 4.99
+      },
+      {
+        "day": "2026-09-30",
+        "actual": 5.22,
+        "predicted": 4.84,
+        "baseline": 4.96
+      },
+      {
+        "day": "2026-10-01",
+        "actual": 5.22,
+        "predicted": 4.94,
+        "baseline": 5.22
+      },
+      {
+        "day": "2026-10-02",
+        "actual": 5.12,
+        "predicted": 4.93,
+        "baseline": 5.22
+      },
+      {
+        "day": "2026-10-03",
+        "actual": 5.11,
+        "predicted": 4.88,
+        "baseline": 5.12
+      },
+      {
+        "day": "2026-10-04",
+        "actual": 5.16,
+        "predicted": 4.88,
+        "baseline": 5.11
+      },
+      {
+        "day": "2026-10-05",
+        "actual": 5.05,
+        "predicted": 4.91,
+        "baseline": 5.16
+      },
+      {
+        "day": "2026-10-06",
+        "actual": 4.8,
+        "predicted": 4.85,
+        "baseline": 5.05
+      },
+      {
+        "day": "2026-10-07",
+        "actual": 4.64,
+        "predicted": 4.74,
+        "baseline": 4.8
+      },
+      {
+        "day": "2026-10-08",
+        "actual": 4.91,
+        "predicted": 4.64,
+        "baseline": 4.64
+      },
+      {
+        "day": "2026-10-09",
+        "actual": 4.81,
+        "predicted": 4.74,
+        "baseline": 4.91
+      },
+      {
+        "day": "2026-10-10",
+        "actual": 3.88,
+        "predicted": 4.67,
+        "baseline": 4.81
+      },
+      {
+        "day": "2026-10-11",
+        "actual": 4.49,
+        "predicted": 4.2,
+        "baseline": 3.88
+      },
+      {
+        "day": "2026-10-12",
+        "actual": 4.5,
+        "predicted": 4.49,
+        "baseline": 4.49
+      },
+      {
+        "day": "2026-10-13",
+        "actual": 4.03,
+        "predicted": 4.4,
+        "baseline": 4.5
+      },
+      {
+        "day": "2026-10-14",
+        "actual": 3.98,
+        "predicted": 4.15,
+        "baseline": 4.03
+      },
+      {
+        "day": "2026-10-15",
+        "actual": 4.33,
+        "predicted": 4.11,
+        "baseline": 3.98
+      },
+      {
+        "day": "2026-10-16",
+        "actual": 4.56,
+        "predicted": 4.22,
+        "baseline": 4.33
+      },
+      {
+        "day": "2026-10-17",
+        "actual": 4.38,
+        "predicted": 4.29,
+        "baseline": 4.56
+      },
+      {
+        "day": "2026-10-18",
+        "actual": 4.34,
+        "predicted": 4.23,
+        "baseline": 4.38
+      },
+      {
+        "day": "2026-10-19",
+        "actual": 4.35,
+        "predicted": 4.21,
+        "baseline": 4.34
+      },
+      {
+        "day": "2026-10-20",
+        "actual": 4.43,
+        "predicted": 4.2,
+        "baseline": 4.35
+      },
+      {
+        "day": "2026-10-21",
+        "actual": 4.35,
+        "predicted": 4.26,
+        "baseline": 4.43
+      },
+      {
+        "day": "2026-10-22",
+        "actual": 4.13,
+        "predicted": 4.24,
+        "baseline": 4.35
+      },
+      {
+        "day": "2026-10-23",
+        "actual": 4.36,
+        "predicted": 4.14,
+        "baseline": 4.13
+      },
+      {
+        "day": "2026-10-24",
+        "actual": 4.05,
+        "predicted": 4.22,
+        "baseline": 4.36
+      },
+      {
+        "day": "2026-10-25",
+        "actual": 4.35,
+        "predicted": 4.06,
+        "baseline": 4.05
+      },
+      {
+        "day": "2026-10-26",
+        "actual": 4.25,
+        "predicted": 4.2,
+        "baseline": 4.35
+      },
+      {
+        "day": "2026-10-27",
+        "actual": 4.21,
+        "predicted": 4.14,
+        "baseline": 4.25
+      },
+      {
+        "day": "2026-10-28",
+        "actual": 4.2,
+        "predicted": 4.11,
+        "baseline": 4.21
+      },
+      {
+        "day": "2026-10-29",
+        "actual": 4.2,
+        "predicted": 4.1,
+        "baseline": 4.2
+      },
+      {
+        "day": "2026-10-30",
+        "actual": 4.12,
+        "predicted": 4.1,
+        "baseline": 4.2
+      },
+      {
+        "day": "2026-10-31",
+        "actual": 4.06,
+        "predicted": 4.05,
+        "baseline": 4.12
+      },
+      {
+        "day": "2026-11-01",
+        "actual": 4.08,
+        "predicted": 4.02,
+        "baseline": 4.06
+      },
+      {
+        "day": "2026-11-02",
+        "actual": 4.08,
+        "predicted": 4.02,
+        "baseline": 4.08
+      },
+      {
+        "day": "2026-11-03",
+        "actual": 3.95,
+        "predicted": 4.0,
+        "baseline": 4.08
+      },
+      {
+        "day": "2026-11-04",
+        "actual": 3.86,
+        "predicted": 3.93,
+        "baseline": 3.95
+      },
+      {
+        "day": "2026-11-05",
+        "actual": 3.8,
+        "predicted": 3.88,
+        "baseline": 3.86
+      },
+      {
+        "day": "2026-11-06",
+        "actual": 3.79,
+        "predicted": 3.83,
+        "baseline": 3.8
+      },
+      {
+        "day": "2026-11-07",
+        "actual": 3.87,
+        "predicted": 3.81,
+        "baseline": 3.79
+      },
+      {
+        "day": "2026-11-08",
+        "actual": 3.87,
+        "predicted": 3.83,
+        "baseline": 3.87
+      },
+      {
+        "day": "2026-11-09",
+        "actual": 3.69,
+        "predicted": 3.81,
+        "baseline": 3.87
+      },
+      {
+        "day": "2026-11-10",
+        "actual": 3.73,
+        "predicted": 3.71,
+        "baseline": 3.69
+      },
+      {
+        "day": "2026-11-11",
+        "actual": 3.74,
+        "predicted": 3.72,
+        "baseline": 3.73
+      },
+      {
+        "day": "2026-11-12",
+        "actual": 3.52,
+        "predicted": 3.72,
+        "baseline": 3.74
+      },
+      {
+        "day": "2026-11-13",
+        "actual": 3.31,
+        "predicted": 3.6,
+        "baseline": 3.52
+      },
+      {
+        "day": "2026-11-14",
+        "actual": 3.55,
+        "predicted": 3.49,
+        "baseline": 3.31
+      },
+      {
+        "day": "2026-11-15",
+        "actual": 3.73,
+        "predicted": 3.59,
+        "baseline": 3.55
+      },
+      {
+        "day": "2026-11-16",
+        "actual": 3.79,
+        "predicted": 3.65,
+        "baseline": 3.73
+      },
+      {
+        "day": "2026-11-17",
+        "actual": 3.79,
+        "predicted": 3.67,
+        "baseline": 3.79
+      },
+      {
+        "day": "2026-11-18",
+        "actual": 3.71,
+        "predicted": 3.67,
+        "baseline": 3.79
+      },
+      {
+        "day": "2026-11-19",
+        "actual": 3.7,
+        "predicted": 3.63,
+        "baseline": 3.71
+      },
+      {
+        "day": "2026-11-20",
+        "actual": 3.71,
+        "predicted": 3.65,
+        "baseline": 3.7
+      },
+      {
+        "day": "2026-11-21",
+        "actual": 3.62,
+        "predicted": 3.67,
+        "baseline": 3.71
+      },
+      {
+        "day": "2026-11-22",
+        "actual": 3.54,
+        "predicted": 3.64,
+        "baseline": 3.62
+      },
+      {
+        "day": "2026-11-23",
+        "actual": 3.6,
+        "predicted": 3.59,
+        "baseline": 3.54
+      },
+      {
+        "day": "2026-11-24",
+        "actual": 3.63,
+        "predicted": 3.61,
+        "baseline": 3.6
+      },
+      {
+        "day": "2026-11-25",
+        "actual": 3.57,
+        "predicted": 3.61,
+        "baseline": 3.63
+      },
+      {
+        "day": "2026-11-26",
+        "actual": 3.55,
+        "predicted": 3.58,
+        "baseline": 3.57
+      },
+      {
+        "day": "2026-11-27",
+        "actual": 3.53,
+        "predicted": 3.56,
+        "baseline": 3.55
+      }
+    ],
+    "Rahim Yar Khan": [
+      {
+        "day": "2026-09-29",
+        "actual": 5.14,
+        "predicted": 5.21,
+        "baseline": 5.32
+      },
+      {
+        "day": "2026-09-30",
+        "actual": 5.2,
+        "predicted": 5.09,
+        "baseline": 5.14
+      },
+      {
+        "day": "2026-10-01",
+        "actual": 5.38,
+        "predicted": 5.08,
+        "baseline": 5.2
+      },
+      {
+        "day": "2026-10-02",
+        "actual": 5.33,
+        "predicted": 5.14,
+        "baseline": 5.38
+      },
+      {
+        "day": "2026-10-03",
+        "actual": 5.42,
+        "predicted": 5.1,
+        "baseline": 5.33
+      },
+      {
+        "day": "2026-10-04",
+        "actual": 5.46,
+        "predicted": 5.13,
+        "baseline": 5.42
+      },
+      {
+        "day": "2026-10-05",
+        "actual": 5.37,
+        "predicted": 5.15,
+        "baseline": 5.46
+      },
+      {
+        "day": "2026-10-06",
+        "actual": 5.34,
+        "predicted": 5.11,
+        "baseline": 5.37
+      },
+      {
+        "day": "2026-10-07",
+        "actual": 4.98,
+        "predicted": 5.1,
+        "baseline": 5.34
+      },
+      {
+        "day": "2026-10-08",
+        "actual": 5.25,
+        "predicted": 4.94,
+        "baseline": 4.98
+      },
+      {
+        "day": "2026-10-09",
+        "actual": 5.16,
+        "predicted": 5.06,
+        "baseline": 5.25
+      },
+      {
+        "day": "2026-10-10",
+        "actual": 4.72,
+        "predicted": 4.99,
+        "baseline": 5.16
+      },
+      {
+        "day": "2026-10-11",
+        "actual": 4.89,
+        "predicted": 4.77,
+        "baseline": 4.72
+      },
+      {
+        "day": "2026-10-12",
+        "actual": 4.87,
+        "predicted": 4.82,
+        "baseline": 4.89
+      },
+      {
+        "day": "2026-10-13",
+        "actual": 4.89,
+        "predicted": 4.77,
+        "baseline": 4.87
+      },
+      {
+        "day": "2026-10-14",
+        "actual": 4.71,
+        "predicted": 4.75,
+        "baseline": 4.89
+      },
+      {
+        "day": "2026-10-15",
+        "actual": 4.83,
+        "predicted": 4.65,
+        "baseline": 4.71
+      },
+      {
+        "day": "2026-10-16",
+        "actual": 4.94,
+        "predicted": 4.69,
+        "baseline": 4.83
+      },
+      {
+        "day": "2026-10-17",
+        "actual": 4.72,
+        "predicted": 4.71,
+        "baseline": 4.94
+      },
+      {
+        "day": "2026-10-18",
+        "actual": 4.87,
+        "predicted": 4.61,
+        "baseline": 4.72
+      },
+      {
+        "day": "2026-10-19",
+        "actual": 4.84,
+        "predicted": 4.68,
+        "baseline": 4.87
+      },
+      {
+        "day": "2026-10-20",
+        "actual": 4.63,
+        "predicted": 4.66,
+        "baseline": 4.84
+      },
+      {
+        "day": "2026-10-21",
+        "actual": 4.76,
+        "predicted": 4.55,
+        "baseline": 4.63
+      },
+      {
+        "day": "2026-10-22",
+        "actual": 4.57,
+        "predicted": 4.62,
+        "baseline": 4.76
+      },
+      {
+        "day": "2026-10-23",
+        "actual": 4.6,
+        "predicted": 4.51,
+        "baseline": 4.57
+      },
+      {
+        "day": "2026-10-24",
+        "actual": 4.68,
+        "predicted": 4.51,
+        "baseline": 4.6
+      },
+      {
+        "day": "2026-10-25",
+        "actual": 4.65,
+        "predicted": 4.54,
+        "baseline": 4.68
+      },
+      {
+        "day": "2026-10-26",
+        "actual": 4.56,
+        "predicted": 4.51,
+        "baseline": 4.65
+      },
+      {
+        "day": "2026-10-27",
+        "actual": 4.62,
+        "predicted": 4.45,
+        "baseline": 4.56
+      },
+      {
+        "day": "2026-10-28",
+        "actual": 4.52,
+        "predicted": 4.47,
+        "baseline": 4.62
+      },
+      {
+        "day": "2026-10-29",
+        "actual": 4.42,
+        "predicted": 4.41,
+        "baseline": 4.52
+      },
+      {
+        "day": "2026-10-30",
+        "actual": 4.47,
+        "predicted": 4.37,
+        "baseline": 4.42
+      },
+      {
+        "day": "2026-10-31",
+        "actual": 4.41,
+        "predicted": 4.38,
+        "baseline": 4.47
+      },
+      {
+        "day": "2026-11-01",
+        "actual": 4.43,
+        "predicted": 4.33,
+        "baseline": 4.41
+      },
+      {
+        "day": "2026-11-02",
+        "actual": 4.42,
+        "predicted": 4.33,
+        "baseline": 4.43
+      },
+      {
+        "day": "2026-11-03",
+        "actual": 4.26,
+        "predicted": 4.31,
+        "baseline": 4.42
+      },
+      {
+        "day": "2026-11-04",
+        "actual": 4.21,
+        "predicted": 4.23,
+        "baseline": 4.26
+      },
+      {
+        "day": "2026-11-05",
+        "actual": 4.17,
+        "predicted": 4.19,
+        "baseline": 4.21
+      },
+      {
+        "day": "2026-11-06",
+        "actual": 4.14,
+        "predicted": 4.16,
+        "baseline": 4.17
+      },
+      {
+        "day": "2026-11-07",
+        "actual": 4.22,
+        "predicted": 4.13,
+        "baseline": 4.14
+      },
+      {
+        "day": "2026-11-08",
+        "actual": 4.22,
+        "predicted": 4.15,
+        "baseline": 4.22
+      },
+      {
+        "day": "2026-11-09",
+        "actual": 4.15,
+        "predicted": 4.13,
+        "baseline": 4.22
+      },
+      {
+        "day": "2026-11-10",
+        "actual": 4.09,
+        "predicted": 4.09,
+        "baseline": 4.15
+      },
+      {
+        "day": "2026-11-11",
+        "actual": 4.06,
+        "predicted": 4.05,
+        "baseline": 4.09
+      },
+      {
+        "day": "2026-11-12",
+        "actual": 3.81,
+        "predicted": 4.03,
+        "baseline": 4.06
+      },
+      {
+        "day": "2026-11-13",
+        "actual": 3.65,
+        "predicted": 3.9,
+        "baseline": 3.81
+      },
+      {
+        "day": "2026-11-14",
+        "actual": 3.54,
+        "predicted": 3.82,
+        "baseline": 3.65
+      },
+      {
+        "day": "2026-11-15",
+        "actual": 3.99,
+        "predicted": 3.74,
+        "baseline": 3.54
+      },
+      {
+        "day": "2026-11-16",
+        "actual": 4.11,
+        "predicted": 3.92,
+        "baseline": 3.99
+      },
+      {
+        "day": "2026-11-17",
+        "actual": 4.1,
+        "predicted": 3.95,
+        "baseline": 4.11
+      },
+      {
+        "day": "2026-11-18",
+        "actual": 4.01,
+        "predicted": 3.94,
+        "baseline": 4.1
+      },
+      {
+        "day": "2026-11-19",
+        "actual": 4.03,
+        "predicted": 3.9,
+        "baseline": 4.01
+      },
+      {
+        "day": "2026-11-20",
+        "actual": 4.03,
+        "predicted": 3.93,
+        "baseline": 4.03
+      },
+      {
+        "day": "2026-11-21",
+        "actual": 3.73,
+        "predicted": 3.95,
+        "baseline": 4.03
+      },
+      {
+        "day": "2026-11-22",
+        "actual": 3.9,
+        "predicted": 3.83,
+        "baseline": 3.73
+      },
+      {
+        "day": "2026-11-23",
+        "actual": 3.88,
+        "predicted": 3.91,
+        "baseline": 3.9
+      },
+      {
+        "day": "2026-11-24",
+        "actual": 3.9,
+        "predicted": 3.88,
+        "baseline": 3.88
+      },
+      {
+        "day": "2026-11-25",
+        "actual": 3.88,
+        "predicted": 3.88,
+        "baseline": 3.9
+      },
+      {
+        "day": "2026-11-26",
+        "actual": 3.86,
+        "predicted": 3.86,
+        "baseline": 3.88
+      },
+      {
+        "day": "2026-11-27",
+        "actual": 3.84,
+        "predicted": 3.84,
+        "baseline": 3.86
+      }
+    ]
+  }
+}
